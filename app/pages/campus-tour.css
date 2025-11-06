@@ -1,0 +1,101 @@
+.tour-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at 20% 20%, rgba(91, 196, 190, 0.25), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(255, 204, 112, 0.2), transparent 60%),
+    linear-gradient(135deg, #080f16 0%, #142732 50%, #1f3f41 100%);
+  color: #edf1f7;
+  font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', 'Segoe UI', sans-serif;
+}
+
+.tour-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 5vw;
+  background: rgba(7, 14, 20, 0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 24px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.back-button {
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: inherit;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-2px);
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  opacity: 0.7;
+}
+
+.tour-header h1 {
+  margin: 6px 0 0;
+  font-size: 1.65rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(91, 196, 190, 0.18);
+  font-size: 0.82rem;
+}
+
+.tour-main {
+  flex: 1;
+  padding: 32px 5vw 64px;
+  display: flex;
+}
+
+.player-shell {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(9, 18, 26, 0.75);
+  border-radius: 24px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .tour-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 24px;
+  }
+
+  .tour-main {
+    padding: 24px;
+  }
+
+  .player-shell {
+    padding: 20px;
+    border-radius: 18px;
+  }
+}
