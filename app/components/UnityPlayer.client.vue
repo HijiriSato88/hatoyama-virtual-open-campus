@@ -19,10 +19,25 @@
 
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
-import { useHead } from '#imports'
+import { useHead, useRuntimeConfig } from '#imports'
 
-const basePath = '/unity/campus'
-const loaderSrc = `${basePath}/Build/webgl.loader.js`
+const runtimeConfig = useRuntimeConfig()
+
+const basePath = (() => {
+  const raw = runtimeConfig.public.unityBaseUrl || ''
+  const trimmed = raw.trim().replace(/\/+$/, '')
+  if (!trimmed) {
+    throw new Error(
+      'NUXT_PUBLIC_UNITY_BASE_URL is not configured. Unity assets must be hosted on the CDN.'
+    )
+  }
+  return trimmed
+})()
+
+const buildFilePrefix = 'campus'
+const compressionSuffix = '.gz'
+const streamingAssetsSuffix = '/talk'
+const loaderSrc = `${basePath}/Build/${buildFilePrefix}.loader.js`
 
 const containerRef = ref<HTMLDivElement | null>(null)
 const canvasRef = ref<HTMLCanvasElement | null>(null)
@@ -154,10 +169,10 @@ onMounted(async () => {
     loadingBarRef.value && (loadingBarRef.value.style.display = 'block')
 
     const config = {
-      dataUrl: `${basePath}/Build/webgl.data`,
-      frameworkUrl: `${basePath}/Build/webgl.framework.js`,
-      codeUrl: `${basePath}/Build/webgl.wasm`,
-      streamingAssetsUrl: `${basePath}/StreamingAssets`,
+      dataUrl: `${basePath}/Build/${buildFilePrefix}.data${compressionSuffix}`,
+      frameworkUrl: `${basePath}/Build/${buildFilePrefix}.framework.js${compressionSuffix}`,
+      codeUrl: `${basePath}/Build/${buildFilePrefix}.wasm${compressionSuffix}`,
+      streamingAssetsUrl: `${basePath}/StreamingAssets${streamingAssetsSuffix}`,
       companyName: 'Tokyo Denki University',
       productName: 'Hatoyama Virtual Campus Tour',
       productVersion: '1.0',
