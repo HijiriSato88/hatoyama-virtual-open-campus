@@ -26,7 +26,7 @@
           <div v-else class="mobile-blocker">
             <p class="mobile-blocker__title">PC専用コンテンツです</p>
             <p class="mobile-blocker__description">
-              キャンパスツアーはPCブラウザ向けに最適化されています。PC端末からアクセスしてください。
+              キャンパスツアーはPCブラウザ向けに開発されています。PC端末からアクセスしてください。
             </p>
             <button class="back-button secondary" type="button" @click="goBack">
               トップページに戻る
