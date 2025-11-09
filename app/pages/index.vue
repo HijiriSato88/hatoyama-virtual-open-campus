@@ -45,7 +45,7 @@
           <figure class="hero-photo forest">
             <img
               :src="campusImage"
-              alt="鳩山キャンパスを思わせる深い森の小径"
+              alt="鳩山キャンパス"
               loading="lazy"
             />
           </figure>
@@ -146,16 +146,15 @@
 <script setup lang="ts">
 import { useHead, navigateTo } from '#imports'
 import { computed, ref } from 'vue'
+import campusImage from '~/assets/image/campus.png'
+import welcomeGirlImage from '~/assets/image/welcome_girl.png'
+import lectureGuideImage from '~/assets/image/teach_lecturet_mob.png'
 
 const year = new Date().getFullYear()
 
 const goToTour = () => {
   navigateTo('/campus-tour')
 }
-
-const campusImage = new URL('../assets/image/campus.png', import.meta.url).href
-const welcomeGirlImage = new URL('../assets/image/welcome_girl.png', import.meta.url).href
-const lectureGuideImage = new URL('../assets/image/teach_lecturet_mob.png', import.meta.url).href
 
 const courseTabs = [
   {
@@ -199,7 +198,7 @@ const gameplayEvents = [
       '建物内にいる赤髪の生徒と会話すると、キャンパスツアーにおける案内コース、自由コースのどちらかを選択できます。最初の一歩に迷ったら彼女に相談しましょう。',
     badge: 'キャンパスツアー',
     image: welcomeGirlImage,
-    alt: 'ツアー選択を案内してくれる赤髪の生徒キャラクター'
+    alt: '案内してくれる生徒'
   },
   {
     title: '講義内容を紹介してくれる生徒',
@@ -207,7 +206,7 @@ const gameplayEvents = [
       'キャンパスには複数の生徒が通っています。講義の内容など、授業の雰囲気を教えてくれます。たくさんの生徒に話しかけてイメージを膨らませましょう。',
     badge: '講義ガイド',
     image: lectureGuideImage,
-    alt: '講義内容を教えてくれる生徒キャラクター'
+    alt: '講義内容を教えてくれる生徒'
   }
 ]
 
