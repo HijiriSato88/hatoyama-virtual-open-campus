@@ -2,10 +2,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: radial-gradient(circle at 20% 20%, rgba(91, 196, 190, 0.25), transparent 55%),
-    radial-gradient(circle at 80% 0%, rgba(255, 204, 112, 0.2), transparent 60%),
-    linear-gradient(135deg, #080f16 0%, #142732 50%, #1f3f41 100%);
-  color: #edf1f7;
+  background: #d6fbe7;
+  color: #0f1c2a;
   font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', 'Segoe UI', sans-serif;
 }
 
@@ -14,10 +12,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 24px 5vw;
-  background: rgba(7, 14, 20, 0.75);
+  background: #17c26f;
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   gap: 24px;
+  color: #ffffff;
 }
 
 .header-left {
@@ -28,8 +27,8 @@
 
 .back-button {
   border: none;
-  background: rgba(255, 255, 255, 0.1);
-  color: inherit;
+  background: rgba(255, 255, 255, 0.979);
+  color: #0f1c2a;
   padding: 10px 18px;
   border-radius: 999px;
   cursor: pointer;
@@ -37,7 +36,7 @@
 }
 
 .back-button:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.9);
   transform: translateX(-2px);
 }
 
@@ -46,12 +45,13 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.24em;
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 .tour-header h1 {
   margin: 6px 0 0;
   font-size: 1.65rem;
+  color: #ffffff;
 }
 
 .badge {
@@ -73,7 +73,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  background: rgba(9, 18, 26, 0.75);
+  background: #8fe6bbw;
   border-radius: 24px;
   padding: 28px;
   border: 1px solid rgba(255, 255, 255, 0.08);

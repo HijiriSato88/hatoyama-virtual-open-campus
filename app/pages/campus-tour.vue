@@ -8,8 +8,8 @@
           ← トップへ戻る
         </button>
         <div>
-          <p class="eyebrow">Virtual Tour</p>
-          <h1>鳩山キャンパス ツアー体験</h1>
+          <p class="eyebrow">Virtual Open Campus</p>
+          <h1>鳩山 キャンパスツアー</h1>
         </div>
       </div>
     </header>
