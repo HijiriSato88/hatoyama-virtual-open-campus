@@ -13,7 +13,7 @@
     </header>
 
     <main class="page-main">
-      <section class="hero" id="hero">
+      <section class="page-section hero" id="hero">
         <div class="hero-text">
           <h1>
             鳩山キャンパスを旅する仮想体験
@@ -54,7 +54,7 @@
         </div>
       </section>
 
-      <section class="experience" id="experience">
+      <section class="page-section experience" id="experience">
         <div class="section-heading">
           <p class="section-eyebrow">Gameplay</p>
           <h2>サービスの遊び方</h2>
@@ -82,7 +82,7 @@
         </div>
       </section>
 
-      <section class="tours" id="tours">
+      <section class="page-section tours" id="tours">
         <div class="section-heading">
           <p class="section-eyebrow">Tour Programs</p>
           <h2>２つのキャンパスツアーを選択</h2>
@@ -130,9 +130,8 @@
         </article>
       </section>
 
-      <section class="cta" id="cta">
-        <div class="cta-inner">
-          <h2>準備はできましたか？</h2>
+      <section class="page-section cta" id="cta">
+          <h2>キャンパスに遊びに行こう</h2>
           <p class="cta-text">
           </p>
           <div class="cta-actions">
@@ -140,7 +139,6 @@
               キャンパスツアーをすぐに始める
             </button>
           </div>
-        </div>
       </section>
     </main>
 
