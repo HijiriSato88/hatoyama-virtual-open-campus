@@ -34,11 +34,11 @@
             </div>
             <div>
               <span class="highlight-label">案内</span>
-              <p>生徒役のナビゲーターがキャンパス内を案内</p>
+              <p>生徒ナビゲーターがキャンパス内を案内</p>
             </div>
             <div>
               <span class="highlight-label">声</span>
-              <p>在学生のリアルな意見を聞くことができます。</p>
+              <p>在学生のリアルな声を聞くことができます。</p>
             </div>
           </div>
         </div>
@@ -49,14 +49,12 @@
               alt="鳩山キャンパスを思わせる深い森の小径"
               loading="lazy"
             />
-            <figcaption>森林浴のような清澄な空気を再現</figcaption>
           </figure>
         </div>
       </section>
 
       <section class="page-section experience" id="experience">
         <div class="section-heading">
-          <p class="section-eyebrow">Gameplay</p>
           <h2>サービスの遊び方</h2>
           <p class="section-description">
             キャンパスでは、生徒との会話やイベントを通じて大学の雰囲気や研究のリアルな声に触れられます。
@@ -84,8 +82,7 @@
 
       <section class="page-section tours" id="tours">
         <div class="section-heading">
-          <p class="section-eyebrow">Tour Programs</p>
-          <h2>２つのキャンパスツアーを選択</h2>
+          <h2>キャンパスツアーを選択</h2>
           <p class="section-description">
             迷ったら先輩と歩く案内コース、気ままに歩きたいなら自由コース。
             どちらの体験も、実際のキャンパスで感じる視線や空気感を再現しました。
@@ -136,14 +133,14 @@
           </p>
           <div class="cta-actions">
             <button class="cta-button" @click="goToTour">
-              キャンパスツアーをすぐに始める
+              キャンパスツアーを始める
             </button>
           </div>
       </section>
     </main>
 
     <footer class="page-footer">
-      <p>© {{ year }} hijiri sato</p>
+      <p>© {{ year }} Hijiri Sato</p>
     </footer>
   </div>
 </template>
