@@ -56,10 +56,11 @@
 
       <section class="experience" id="experience">
         <div class="section-heading">
-          <p class="section-eyebrow">Gameplay & Tours</p>
+          <p class="section-eyebrow">Gameplay</p>
           <h2>サービスの遊び方</h2>
           <p class="section-description">
-            キャンパスでは、生徒との会話やイベントを通じて大学の雰囲気を体験できます。
+            キャンパスでは、生徒との会話やイベントを通じて大学の雰囲気や研究のリアルな声に触れられます。
+            まずはゲーム内でできる行動をチェックして、最初の一歩を決めましょう。
           </p>
         </div>
 
@@ -79,46 +80,54 @@
             </div>
           </article>
         </div>
+      </section>
 
-        <div class="experience-subheading">
+      <section class="tours" id="tours">
+        <div class="section-heading">
           <p class="section-eyebrow">Tour Programs</p>
-          <h3>２つのキャンパスツアーを選択</h3>
-          <p>
+          <h2>２つのキャンパスツアーを選択</h2>
+          <p class="section-description">
             迷ったら先輩と歩く案内コース、気ままに歩きたいなら自由コース。
             どちらの体験も、実際のキャンパスで感じる視線や空気感を再現しました。
           </p>
         </div>
 
-        <div class="course-grid">
-          <article class="course-card guided">
-            <div class="course-card__header">
-              <h3>案内コース</h3>
-              <span class="course-tag">先輩ナビゲーター</span>
-            </div>
-            <p>
-              ナビゲーターがキャンパス内を案内。
-              自然豊かな環境の中を巡りながら、大学生活の魅力を発見しましょう。
-            </p>
-            <ul>
-              <li>施設内の見どころをナビゲーターが解説</li>
-              <li>休憩スポットのおすすめや学生目線の過ごし方もチェック</li>
-            </ul>
-          </article>
-
-          <article class="course-card free">
-            <div class="course-card__header">
-              <h3>自由コース</h3>
-              <span class="course-tag">自分のペース</span>
-            </div>
-            <p>
-              好きな順番でキャンパスを散策しながら、スターを見つけに行きましょう。
-            </p>
-            <ul>
-              <li>スターを探しながら、キャンパス内を自由に散策</li>
-              <li>全部のスターを集めて、大学について詳しくなりましょう</li>
-            </ul>
-          </article>
+        <div class="course-tabs" role="tablist" aria-label="キャンパスツアーのタイプ">
+          <button
+            v-for="course in courseTabs"
+            :key="course.id"
+            class="course-tab"
+            :class="{ 'course-tab--active': course.id === activeCourseId }"
+            type="button"
+            role="tab"
+            :aria-selected="course.id === activeCourseId"
+            @click="activeCourseId = course.id"
+          >
+            <span class="course-tab__label">{{ course.title }}</span>
+            <span class="course-tab__sub">{{ course.tabLead }}</span>
+          </button>
         </div>
+
+        <article v-if="activeCourse" class="course-panel" role="tabpanel">
+          <header class="course-panel__header">
+            <div>
+              <p class="course-panel__badge">{{ activeCourse.badge }}</p>
+              <h3>{{ activeCourse.title }}</h3>
+            </div>
+            <span class="course-panel__tag">{{ activeCourse.tag }}</span>
+          </header>
+          <p class="course-panel__summary">
+            {{ activeCourse.summary }}
+          </p>
+          <ul>
+            <li v-for="point in activeCourse.points" :key="point">
+              {{ point }}
+            </li>
+          </ul>
+          <div class="course-panel__foot">
+            <p>{{ activeCourse.recommendation }}</p>
+          </div>
+        </article>
       </section>
 
       <section class="cta" id="cta">
@@ -143,6 +152,7 @@
 
 <script setup lang="ts">
 import { useHead, navigateTo } from '#imports'
+import { computed, ref } from 'vue'
 
 const year = new Date().getFullYear()
 
@@ -153,6 +163,41 @@ const goToTour = () => {
 const campusImage = new URL('../assets/image/campus.png', import.meta.url).href
 const welcomeGirlImage = new URL('../assets/image/welcome_girl.png', import.meta.url).href
 const lectureGuideImage = new URL('../assets/image/teach_lecturet_mob.png', import.meta.url).href
+
+const courseTabs = [
+  {
+    id: 'guided',
+    title: '案内コース',
+    tabLead: '先輩が同行して案内',
+    badge: 'Guided Tour',
+    tag: '先輩ナビゲーター',
+    summary:
+      'ナビゲーターと歩きながら、鳩山キャンパスの施設の見どころを順番に巡る安心コースです。',
+    points: [
+      '施設内の見どころをナビゲーターが紹介',
+      '休憩スポットや学生目線の過ごし方もチェックしよう'
+    ],
+    recommendation: '初めての方、迷わず効率的に周りたい人におすすめ。'
+  },
+  {
+    id: 'free',
+    title: '自由コース',
+    tabLead: '自分のペースで散策',
+    badge: 'Free Roam',
+    tag: '気ままに探索',
+    summary:
+      '広いキャンパスを好きなルートで歩き、散りばめられたスターを集めながら自分だけの発見を楽しめるコースです。',
+    points: [
+      '好きな順番でエリアを巡り、気になるスポットを自由にチェック'
+    ],
+    recommendation: '２回目以降の方や、自分の直感で歩きたい人にぴったり。'
+  }
+]
+
+const activeCourseId = ref(courseTabs[0].id)
+const activeCourse = computed(() =>
+  courseTabs.find((course) => course.id === activeCourseId.value)
+)
 
 const gameplayEvents = [
   {
