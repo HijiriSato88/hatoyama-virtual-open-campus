@@ -14,6 +14,10 @@
   overflow-x: hidden;
 }
 
+.mobile-only-break {
+  display: none;
+}
+
 .page-header {
   position: sticky;
   top: 0;
@@ -263,6 +267,10 @@
   margin: 24px 0 0;
   padding-left: 22px;
   opacity: 0.85;
+}
+
+.hero-photo--mobile {
+  display: none;
 }
 
 .experience-grid {
@@ -531,6 +539,47 @@
     padding: 36px 28px;
   }
 
+  .hero {
+    gap: 32px;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(2.1rem, 7vw, 2.7rem);
+    line-height: 1.3;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo--mobile {
+    display: block;
+    margin-top: 16px;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+
+  .experience-grid {
+    grid-template-columns: minmax(0, 1fr);
+    text-align: center;
+  }
+
   .course-tabs {
     gap: 12px;
   }
@@ -541,20 +590,128 @@
 
   .course-panel {
     padding: 24px;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
   }
 
   .course-panel__header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .course-panel__foot {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 12px;
   }
 
   .course-panel__cta {
     width: 100%;
     text-align: center;
+  }
+
+  .cta h2 {
+    font-size: clamp(2rem, 8.2vw, 2.6rem);
+  }
+
+  .cta-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 540px) {
+  .page-main {
+    padding: 0 16px 0;
+    --page-inline-padding: 16px;
+  }
+
+  .page-header {
+    padding: 14px 16px;
+  }
+
+  .logo-mark {
+    width: 46px;
+    height: 46px;
+    font-size: 0.9rem;
+  }
+
+  .logo-text__title {
+    font-size: 0.85rem;
+  }
+
+  .page-section {
+    padding-block: 40px;
+  }
+
+  .hero {
+    padding-top: 48px;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(1.8rem, 8vw, 2.2rem);
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .hero-highlights div {
+    padding: 14px;
+  }
+
+  .experience-card {
+    padding: 18px;
+  }
+
+  .course-tab {
+    min-width: 0;
+  }
+
+  .mobile-only-break {
+    display: inline;
+  }
+
+  .section-heading h2 {
+    font-size: 1.6rem;
+  }
+
+  .section-description {
+    font-size: 0.85rem;
+  }
+
+  .experience-card__body h3 {
+    font-size: 1.1rem;
+  }
+
+  .experience-card__body p,
+  .experience-card__badge {
+    font-size: 0.85rem;
+  }
+
+  .course-panel__header h3 {
+    font-size: 1.5rem;
+  }
+
+  .course-panel__summary,
+  .course-panel ul,
+  .course-panel__foot p {
+    font-size: 0.85rem;
+  }
+
+  .cta h2 {
+    font-size: 1.6rem;
+  }
+
+  .cta-text {
+    font-size: 0.85rem;
+  }
+
+  .cta-button {
+    font-size: 0.95rem;
+  }
+
+  .page-footer {
+    font-size: 0.8rem;
   }
 }

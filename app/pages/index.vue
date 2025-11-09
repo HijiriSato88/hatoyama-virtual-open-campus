@@ -16,7 +16,7 @@
       <section class="page-section hero" id="hero">
         <div class="hero-text">
           <h1>
-            鳩山キャンパスを旅する仮想体験
+            鳩山キャンパスを<br class="mobile-only-break" />旅する仮想体験
           </h1>
           <p class="hero-description">
             再現された鳩山キャンパスを、まるでその場にいるかのように体験できます。
@@ -34,9 +34,17 @@
             </div>
             <div>
               <span class="highlight-label">声</span>
-              <p>在学生のリアルな声を聞くことができます。</p>
+              <p>在学生のリアルな声を聞ける</p>
             </div>
           </div>
+
+          <figure class="hero-photo hero-photo--mobile">
+            <img
+              :src="campusImage"
+              alt="鳩山キャンパス"
+              loading="lazy"
+            />
+          </figure>
         </div>
         <div class="hero-visual">
           <figure class="hero-photo forest">
@@ -67,7 +75,6 @@
               <img :src="event.image" :alt="event.alt || ''" loading="lazy" />
             </figure>
             <div class="experience-card__body">
-              <span class="experience-card__badge">{{ event.badge }}</span>
               <h3>{{ event.title }}</h3>
               <p>{{ event.description }}</p>
             </div>
@@ -103,10 +110,8 @@
         <article v-if="activeCourse" class="course-panel" role="tabpanel">
           <header class="course-panel__header">
             <div>
-              <p class="course-panel__badge">{{ activeCourse.badge }}</p>
               <h3>{{ activeCourse.title }}</h3>
             </div>
-            <span class="course-panel__tag">{{ activeCourse.tag }}</span>
           </header>
           <p class="course-panel__summary">
             {{ activeCourse.summary }}
@@ -123,7 +128,9 @@
       </section>
 
       <section class="page-section cta" id="cta">
-          <h2>キャンパスに遊びに行こう</h2>
+          <h2>
+            キャンパスに<br class="mobile-only-break" />遊びに行こう
+          </h2>
           <p class="cta-text">
           </p>
           <div class="cta-actions">
@@ -158,8 +165,6 @@ const courseTabs = [
     id: 'guided',
     title: '案内コース',
     tabLead: '先輩が同行して案内',
-    badge: 'Guided Tour',
-    tag: '生徒ナビゲーター',
     summary:
       '鳩山キャンパスの施設の見どころを順番に巡る安心コースです。',
     points: [
@@ -172,8 +177,6 @@ const courseTabs = [
     id: 'free',
     title: '自由コース',
     tabLead: '自分のペースで散策',
-    badge: 'Free Roam',
-    tag: '気ままに探索',
     summary:
       '散りばめられたスターを集めながら自分だけの発見を楽しめるコースです。',
     points: [
@@ -193,7 +196,6 @@ const gameplayEvents = [
     title: '生徒ナビゲーターに話しかけよう',
     description:
       '建物内にいる生徒ナビゲーターに話しかけると、キャンパスツアーの案内コース、自由コースを選択できます。最初の一歩に迷ったら彼女に相談しましょう。',
-    badge: 'キャンパスツアー',
     image: welcomeGirlImage,
     alt: '案内してくれる生徒'
   },
@@ -201,7 +203,6 @@ const gameplayEvents = [
     title: '講義内容を紹介してくれる生徒',
     description:
       'キャンパスには複数の生徒が通っています。講義の内容など、授業の雰囲気を教えてくれます。たくさんの生徒に話しかけてイメージを膨らませましょう。',
-    badge: '講義ガイド',
     image: lectureGuideImage,
     alt: '講義内容を教えてくれる生徒'
   }
