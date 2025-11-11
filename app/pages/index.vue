@@ -209,7 +209,7 @@ const gameplayEvents = [
 ]
 
 useHead({
-  title: '鳩山キャンパス Virtual Open Campus｜東京電機大学',
+  title: '鳩山VirtualOpenCampus',
   meta: [
     {
       name: 'description',

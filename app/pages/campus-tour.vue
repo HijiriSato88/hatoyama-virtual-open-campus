@@ -89,11 +89,11 @@ onBeforeUnmount(() => {
 })
 
 useHead({
-  title: '鳩山キャンパス ツアー体験｜東京電機大学',
+  title: '鳩山VirtualOpenCampus',
   meta: [
     {
       name: 'description',
-      content: 'Unityによる鳩山キャンパスの仮想体験ページ'
+      content: '鳩山キャンパスの仮想体験ページ'
     }
   ]
 })
