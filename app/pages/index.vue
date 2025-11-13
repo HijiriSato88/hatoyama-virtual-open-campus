@@ -21,6 +21,9 @@
           <p class="hero-description">
             再現された鳩山キャンパスを、まるでその場にいるかのように体験できます。
           </p>
+          <p class="hero-note">
+            ※ キャンパスの一部を再現しています。
+          </p>
           <div class="hero-actions">
           </div>
           <div class="hero-highlights">
@@ -34,7 +37,7 @@
             </div>
             <div>
               <span class="highlight-label">声</span>
-              <p>在学生のリアルな声を聞ける</p>
+              <p>在学生のリアルな体験談を聞ける</p>
             </div>
           </div>
 
@@ -77,6 +80,9 @@
             <div class="experience-card__body">
               <h3>{{ event.title }}</h3>
               <p>{{ event.description }}</p>
+              <p v-if="event.detailLink" class="experience-card__note">
+                {{ event.detailNotePrefix || '' }}<a :href="event.detailLink" target="_blank" rel="noopener noreferrer">こちら</a>{{ event.detailNoteSuffix || '' }}
+              </p>
             </div>
           </article>
         </div>
@@ -204,7 +210,10 @@ const gameplayEvents = [
     description:
       'キャンパスには複数の生徒が通っています。講義の内容など、授業の雰囲気を教えてくれます。たくさんの生徒に話しかけてイメージを膨らませましょう。',
     image: lectureGuideImage,
-    alt: '講義内容を教えてくれる生徒'
+    alt: '講義内容を教えてくれる生徒',
+    detailLink: 'https://www.dendai.ac.jp/about/undergraduate/rikougaku/rd/#',
+    detailNotePrefix: '※情報システムデザイン学系のみ。詳しくは',
+    detailNoteSuffix: '。'
   }
 ]
 
