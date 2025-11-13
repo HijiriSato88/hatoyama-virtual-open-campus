@@ -22,7 +22,7 @@
             再現された鳩山キャンパスを、まるでその場にいるかのように体験できます。
           </p>
           <p class="hero-note">
-            ※ キャンパスの一部を再現しています。
+            ※キャンパスの一部を再現しています。
           </p>
           <div class="hero-actions">
           </div>
@@ -212,7 +212,7 @@ const gameplayEvents = [
     image: lectureGuideImage,
     alt: '講義内容を教えてくれる生徒',
     detailLink: 'https://www.dendai.ac.jp/about/undergraduate/rikougaku/rd/#',
-    detailNotePrefix: '※情報システムデザイン学系のみ。詳しくは',
+    detailNotePrefix: '※情報システムデザイン学系のみになります。詳しくは',
     detailNoteSuffix: '。'
   }
 ]
