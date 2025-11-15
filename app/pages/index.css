@@ -2,7 +2,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', 'Segoe UI', sans-serif;
+  font-family: var(--font-futuristic, 'Zen Kaku Gothic New', 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', 'Segoe UI', sans-serif);
   color: #edf1f7;
   --section-sage-light: #d6fbe7;
   --section-sage-mid: #8fe6bb;

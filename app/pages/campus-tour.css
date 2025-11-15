@@ -4,7 +4,7 @@
   flex-direction: column;
   background: #d6fbe7;
   color: #0f1c2a;
-  font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', 'Segoe UI', sans-serif;
+  font-family: var(--font-futuristic, 'Zen Kaku Gothic New', 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', 'Segoe UI', sans-serif);
 }
 
 .tour-header {
