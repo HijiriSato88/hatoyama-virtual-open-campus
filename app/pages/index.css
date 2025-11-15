@@ -98,7 +98,12 @@
 
 .page-section.hero {
   padding-block-start: clamp(88px, 12vw, 160px);
-  background: var(--section-sage-light);
+  background:
+    linear-gradient(140deg, rgba(237, 249, 242, 0.85), rgba(214, 251, 231, 0.74)),
+    var(--hero-mobile-bg, var(--section-sage-light));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .page-section.experience {
@@ -534,13 +539,22 @@
 }
 
 @media (max-width: 1024px) {
+  .page-section.hero {
+    background:
+      linear-gradient(155deg, rgba(237, 249, 242, 0.78), rgba(214, 251, 231, 0.62)),
+      var(--hero-mobile-bg, var(--section-sage-light));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     padding-top: 80px;
   }
 
   .hero-visual {
-    order: -1;
+    display: none;
   }
 }
 
@@ -558,12 +572,24 @@
     padding: 36px 28px;
   }
 
+  .page-section.hero {
+    background:
+      linear-gradient(165deg, rgba(237, 249, 242, 0.58), rgba(214, 251, 231, 0.45)),
+      var(--hero-mobile-bg, var(--section-sage-light));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   .hero {
     gap: 32px;
+    position: relative;
   }
 
   .hero-text {
     text-align: center;
+    position: relative;
+    z-index: 1;
   }
 
   .hero-text h1 {
@@ -585,9 +611,13 @@
     grid-template-columns: 1fr;
   }
 
+  .hero-highlights div {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(8, 45, 34, 0.15);
+  }
+
   .hero-photo--mobile {
-    display: block;
-    margin-top: 16px;
+    display: none;
   }
 
   .hero-visual {

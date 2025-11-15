@@ -13,7 +13,7 @@
     </header>
 
     <main class="page-main">
-      <section class="page-section hero" id="hero">
+      <section class="page-section hero" id="hero" :style="heroSectionStyle">
         <div class="hero-text">
           <h1>
             鳩山キャンパスを<br class="mobile-only-break" />旅する仮想体験
@@ -191,6 +191,10 @@ const courseTabs = [
     recommendation: '２回目以降の方や、自分の直感で歩きたい人にぴったり。'
   }
 ]
+
+const heroSectionStyle = computed(() => ({
+  '--hero-mobile-bg': `url(${campusImage})`
+}))
 
 const activeCourseId = ref(courseTabs[0].id)
 const activeCourse = computed(() =>
